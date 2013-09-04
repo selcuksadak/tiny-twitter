@@ -2,42 +2,26 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
+	subject { page }
+
 	describe "Help" do
+		before { visit help_path }
 
-		it "should have the content 'Help'" do
-			visit '/static_pages/help'
-			expect(page).to have_content('Help')
-		end
-
-		it "should have the title 'Help'" do
-			visit '/static_pages/help'
-			expect(page).to have_title('Help')
-		end
+		it { should have_content('Help') }
+		it { should have_title('Help') }
 	end
 
 	describe "About" do
+		before { visit about_path }
 
-		it "should have the content 'About'" do
-			visit '/static_pages/about'
-			expect(page).to have_content('About')
-		end
-
-		it "should have the title 'About'" do
-			visit '/static_pages/about'
-			expect(page).to have_title('About')
-		end
+		it { should have_content('About') }
+		it { should have_title('About') }
 	end
 
 	describe "Contact" do
+		before { visit contact_path }
 
-		it "should have the content 'Contact'" do
-			visit '/static_pages/contact'
-			expect(page).to have_content('Contact')
-		end
-
-		it "should have the title 'Contact'" do
-			visit '/static_pages/contact'
-			expect(page).to have_title('Contact')
-		end
+		it { should have_content('Contact') }
+		it { should have_title('Contact') }
 	end
 end
